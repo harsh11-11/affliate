@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>affliate check</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <h1>AFFLIATE</h1>    
+    <form onsubmit="false"><br/>
+        <label>Enter tag of amazon affliate</label><br/>
+        <input type="text" name="tag" id="tag" placeholder="enter tag" required></input><br/><br/>
+        <label>Enter subtag of amazon affliate</label><br/>
+        <input type="text" name="subtag" id="subtag" placeholder="enter sub tag"></input><br/><br/>
+        <label>ENTER amazon product link</label><br/>
+        <input type="text" name="url" id="url" placeholder="enter amazon product url" required></input>
+        <button type="button" value="Submit" onclick="CreateURL(tag.value, subtag.value, url.value)">SUBMIT</button>
+        <div type="text" id="result"></div>
+
+    </form>
+
+</body>
+
+</html>

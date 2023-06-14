@@ -1,0 +1,7 @@
+*{
+    margin: 0;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
