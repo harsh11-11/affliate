@@ -5,3 +5,19 @@ h1{
     display: flex;
     justify-content: center;
 }
+
+form{
+    display: flex;
+    align-items: center;
+    margin: 5vh;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    padding: 5vh;
+    border: 1px solid black;
+    background-color: aqua;
+}
+
+.mainDiv{
+    margin: 20vh;
+}
