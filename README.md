@@ -1,0 +1,2 @@
+# affliate
+affiliate Amazon
