@@ -1,4 +1,4 @@
-function CreateURL(tag,subtag, url){
+function CreateURL(tag, subtag, url){
   //const amazonRegex = /^(https?:\/\/)?(www\.)?amazon\.[a-z]{2,}\/(?:[\w-]+\/)?(dp|gp\/product)\/([\w]{10})(\/.*)?$/;
   const amazonRegex = /^(https?:\/\/)?(www\.)?amazon|amzn\.[a-z]{2,}\/.*$/; 
   const flipkartRegex = /^(https?:\/\/)?(www\.)?flipkart|fkrt\.[a-z]{2,}\/.*$/;
@@ -16,12 +16,14 @@ function CreateURL(tag,subtag, url){
     }
 
     let index = url.indexOf("&tag=");
+    //alert(index);
     if(index !== -1){
       let modifyUrl = url.slice(0,index+5); //whole string before '&tag='
-      let newUrl = url.slice(index+5, url.length); //whole string after '&tag='
-      let newIndex = newUrl.indexOf('&'); //index before '&' tag
-      let otherPart = url.slice(index + 5 + newIndex + 1, url.length); //whole string after &
-      var generated = modifyUrl + `${tag}`+"&"+  otherPart +`&ascsubtag=${subtag}`;
+      // alert(modifyUrl);
+      // let newUrl = url.slice(index+5, url.length); //whole string after '&tag='
+      // let newIndex = newUrl.indexOf('&'); //index before '&' tag
+      // let otherPart = url.slice(index + 5 + newIndex + 1, url.length); //whole string after &
+      var generated = modifyUrl + `${tag}`+"&"+"ascsubtag="+`${subtag}`;
       document.getElementById('result').textContent = generated;
       return;
     }
@@ -47,10 +49,10 @@ function CreateURL(tag,subtag, url){
     let index = url.indexOf("&affid=");
     if(index !== -1){
       let modifyUrl = url.slice(0,index+5); //whole string before '&tag='
-      let newUrl = url.slice(index+5, url.length); //whole string after '&tag='
-      let newIndex = newUrl.indexOf('&'); //index before '&' tag
-      let otherPart = url.slice(index + 5 + newIndex + 1, url.length); //whole string after &
-      var generated = modifyUrl + `${tag}`+"&"+  otherPart +`&affExtParam1=${subtag}`;
+      // let newUrl = url.slice(index+5, url.length); //whole string after '&tag='
+      // let newIndex = newUrl.indexOf('&'); //index before '&' tag
+      // let otherPart = url.slice(index + 5 + newIndex + 1, url.length); //whole string after &
+      var generated = modifyUrl + `${tag}`+`&affExtParam1=${subtag}`;
       document.getElementById('result').textContent = generated;
       return;
     }
