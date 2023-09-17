@@ -1,8 +1,8 @@
+
 function CreateURL(tag, subtag, url){
   //const amazonRegex = /^(https?:\/\/)?(www\.)?amazon\.[a-z]{2,}\/(?:[\w-]+\/)?(dp|gp\/product)\/([\w]{10})(\/.*)?$/;
   const amazonRegex = /^(https?:\/\/)?(www\.)?amazon|amzn\.[a-z]{2,}\/.*$/; 
   const flipkartRegex = /^(https?:\/\/)?(www\.)?flipkart|fkrt\.[a-z]{2,}\/.*$/;
-
   if(amazonRegex.test(url)){
     alert("enter in amazon");
     var ASINreg = new RegExp(/(?:\/)([A-Z0-9]{10})(?:$|\/|\?)/);
@@ -24,12 +24,15 @@ function CreateURL(tag, subtag, url){
       // let newIndex = newUrl.indexOf('&'); //index before '&' tag
       // let otherPart = url.slice(index + 5 + newIndex + 1, url.length); //whole string after &
       var generated = modifyUrl + `${tag}`+"&"+"ascsubtag="+`${subtag}`;
-      document.getElementById('result').textContent = generated;
+      document.getElementById('result').value = generated;
+      //shortUrl(generated);
       return;
     }
     else{
       var generated = url + `&tag=${tag}&ascsubtag=${subtag}`;
-      document.getElementById('result').textContent = generated;
+      document.getElementById('result').value = generated;
+      //shortUrl(generated);
+
     }  
   }
  
@@ -53,12 +56,16 @@ function CreateURL(tag, subtag, url){
       // let newIndex = newUrl.indexOf('&'); //index before '&' tag
       // let otherPart = url.slice(index + 5 + newIndex + 1, url.length); //whole string after &
       var generated = modifyUrl + `${tag}`+`&affExtParam1=${subtag}`;
-      document.getElementById('result').textContent = generated;
+      document.getElementById('result').value = generated;
+      //shortUrl(generated);
       return;
     }
     else{
       var generated = url + `&affid=${tag}&affExtParam1=${subtag}`; //there should be &affid= or ?affid=?
-      document.getElementById('result').textContent = generated;
+      var textAreaa = document.getElementById('result');
+      textAreaa.value = generated;
+      //shortUrl(generated);
+      textAreaa.focus({ preventScroll: true });
     }  
   }
 
@@ -68,3 +75,31 @@ function CreateURL(tag, subtag, url){
     return;
   }
 }
+
+
+function myFunction(){
+  // Get the text field
+  let copyText = document.getElementById("result");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);  
+}
+
+// async function shortUrl(urlq){
+//   // The URL to shorten
+//   alert(urlq);
+//   // Call the API
+//   let request = await fetch(`https://api.shrtco.de/v2/shorten?url=${encodeURIComponent(urlq)}`);
+//   alert(request);
+//   // Get the response
+//   let response = await request.json();
+//   alert(response);
+//   // The shortened URL
+//   let shortened = response.result.full_short_link;
+//   alert(shortened);
+//   document.getElementById('shortening').value = shortened;
+// }

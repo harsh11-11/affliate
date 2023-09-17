@@ -17,11 +17,16 @@
         <input type="text" name="subtag" id="subtag" placeholder="enter sub tag"></input><br/><br/>
         <label>ENTER amazon/flipkart product link</label><br/>
         <input type="text" name="url" id="url" placeholder="enter amazon product url" required></input>
-        <button type="button" value="Submit" onclick="CreateURL(tag.value, subtag.value, url.value)">SUBMIT</button>
-        <div type="text" id="result"></div>
+        <button type="button" id= "submitOn" value="Submit" onclick="CreateURL(tag.value, subtag.value, url.value)">SUBMIT</button>
+        <input type="text" id="result" value="affliate link..."></input>
+        <button id= "copyText" onclick="myFunction()">CopyLink</button>
+        
     </form>
-</div>
-
+        <div className = "shortUrl">
+            <input type="text" id="shorteningUr" value="shortening Link..."></input>
+            <button id= "copyText" onclick="shortUrl()">ShortUrl</button>
+        </div>
+    </div>
 </body>
 
 </html>

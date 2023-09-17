@@ -1,23 +1,81 @@
 *{
     margin: 0;
 }
+html{
+    font: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
 h1{
     display: flex;
     justify-content: center;
+    margin:  5vh 0vh 0vh 0vh;
 }
 
 form{
     display: flex;
     align-items: center;
-    margin: 5vh;
+    justify-content: center;
+    margin: 0vh 29vh 0vh 35vh;
     display: flex;
     align-items: stretch;
     flex-direction: column;
     padding: 5vh;
     border: 1px solid black;
-    background-color: aqua;
+    background-color: rgba(196, 239, 250, 0.768);
+    border-radius: 10px;
+}
+
+#subtag ,#tag, #url , #result, #shorteningUrl{
+    border-radius: 10px;
+    height: 20px;
+    border-color: transparent;
 }
 
 .mainDiv{
-    margin: 20vh;
+    margin: 0vh;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result{
+    padding: 10px;
+}
+
+#submitOn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background:blue;
+    color: white;
+    height: 30px;
+    border-radius: 20px;
+    border: white;
+
+}
+.shortUrl{
+    margin-top: 10px    ;
+}
+
+@media (min-width: 1000px) and (max-width: 1024px){
+    form{
+        
+        margin: 0vh 25vh 0vh 25vh;
+        padding: 5vh;
+        
+    }
+}
+
+@media (min-width: 643px) and (max-width: 1000px){
+    form{
+        
+        margin: 0vh 10vh 0vh 10vh;
+        padding: 5vh;
+        
+    }
+}
+
+@media (min-width: 280px) and (max-width: 643px) {
+    form {
+        margin: 0vh 6vh 0vh 5vh;;
+    }
 }
