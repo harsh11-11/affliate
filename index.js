@@ -51,7 +51,7 @@ function CreateURL(tag, subtag, url){
 
     let index = url.indexOf("&affid=");
     if(index !== -1){
-      let modifyUrl = url.slice(0,index+5); //whole string before '&tag='
+      let modifyUrl = url.slice(0,index+7); //whole string before '&tag='
       // let newUrl = url.slice(index+5, url.length); //whole string after '&tag='
       // let newIndex = newUrl.indexOf('&'); //index before '&' tag
       // let otherPart = url.slice(index + 5 + newIndex + 1, url.length); //whole string after &
