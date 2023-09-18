@@ -4,7 +4,7 @@ function CreateURL(tag, subtag, url){
   const amazonRegex = /^(https?:\/\/)?(www\.)?amazon|amzn\.[a-z]{2,}\/.*$/; 
   const flipkartRegex = /^(https?:\/\/)?(www\.)?flipkart|fkrt\.[a-z]{2,}\/.*$/;
   if(amazonRegex.test(url)){
-    alert("enter in amazon");
+    //alert("enter in amazon");
     var ASINreg = new RegExp(/(?:\/)([A-Z0-9]{10})(?:$|\/|\?)/);
     
     if(!url &&(!tag || !subtag)) {
@@ -38,7 +38,7 @@ function CreateURL(tag, subtag, url){
  
 
   if(flipkartRegex.test(url)){
-    alert("enter in flipkart");
+    //alert("enter in flipkart");
     var ASINreg = new RegExp(/(?:pid=)([\w]+)/);
     if(!url &&(!tag || !subtag)) {
       return alert(`Please provide a url and your amazon tracking code. Example: CreateURL('amazon.com/productblahblah', 'pickitly0b-20')`)
